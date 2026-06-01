@@ -17,14 +17,37 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    signingConfigs {
+        // Use the debug keystore to sign the release build in CI.
+        // This keeps the APK installable without storing a real keystore secret.
+        // Replace with a proper release keystore before publishing to the Play Store.
+        nightlyRelease {
+            storeFile file(System.getenv("ANDROID_SDK_ROOT") != null
+                ? "${System.getenv('HOME')}/.android/debug.keystore"
+                : "${project.rootDir}/debug.keystore")
+            storePassword "android"
+            keyAlias "androiddebugkey"
+            keyPassword "android"
+        }
+    }
+
     buildTypes {
         release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            // Enable R8 full-mode shrinking and optimisation
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles(
+                getDefaultProguardFile('proguard-android-optimize.txt'),
+                'proguard-rules.pro'
+            )
+            // Signed with debug key so CI nightlies are installable without
+            // a private keystore secret in the repo
+            signingConfig signingConfigs.nightlyRelease
         }
         debug {
             applicationIdSuffix ".debug"
             debuggable true
+            minifyEnabled false
         }
     }
 
