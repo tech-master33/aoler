@@ -1,0 +1,100 @@
+name: Bug report
+description: Something in the aoler launcher is not working correctly
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for reporting this.
+        Please fill in each field below. The more detail you give, the faster we can fix it.
+        Launcher bugs often depend on which screen reader you are using — please include that.
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: Describe exactly what went wrong.
+      placeholder: "Example: When I swipe up to open the app drawer, nothing happens. The home screen stays visible and the screen reader does not announce the drawer."
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected to happen
+      description: Describe what should have happened instead.
+      placeholder: "Example: Swiping up should open the app drawer and the screen reader should announce how many apps are in the list."
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: List the exact steps that cause the problem. Number each step.
+      placeholder: |
+        1. Press the Home button — aoler opens as the home screen
+        2. Place one finger on the screen and swipe upward
+        3. Nothing opens — the screen reader says nothing
+    validations:
+      required: true
+
+  - type: dropdown
+    id: frequency
+    attributes:
+      label: How often does this happen
+      options:
+        - Every time I follow the steps above
+        - Most of the time
+        - Only sometimes — hard to reproduce
+        - Only happened once
+    validations:
+      required: true
+
+  - type: dropdown
+    id: screen-reader
+    attributes:
+      label: Which screen reader were you using
+      description: Launcher behaviour can differ between screen readers — this helps narrow down the cause.
+      options:
+        - andrdscren (BAOSP screen reader)
+        - TalkBack (Google)
+        - Both — happens with any screen reader
+        - No screen reader — testing without one
+    validations:
+      required: true
+
+  - type: input
+    id: android-version
+    attributes:
+      label: Android version
+      description: "Find this in Settings → About phone → Android version"
+      placeholder: "Example: Android 8.1"
+    validations:
+      required: true
+
+  - type: input
+    id: device
+    attributes:
+      label: Device model
+      description: The brand and model of your phone or tablet
+      placeholder: "Example: Samsung Galaxy A13"
+    validations:
+      required: true
+
+  - type: input
+    id: apk-version
+    attributes:
+      label: aoler version
+      description: The short commit SHA shown in the APK filename from the nightly release (example — abc1234)
+      placeholder: "abc1234"
+    validations:
+      required: false
+
+  - type: textarea
+    id: extra
+    attributes:
+      label: Anything else
+      description: Any other information that might help. You can paste error messages here if you have them.
+    validations:
+      required: false
