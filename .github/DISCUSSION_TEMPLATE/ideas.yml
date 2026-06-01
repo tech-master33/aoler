@@ -1,0 +1,40 @@
+title: "[Idea] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Share an idea for aoler — a new feature, a change to how something works, or a behaviour you wish was different.
+        You do not need to know how to code. Just describe what you want to be able to do.
+        If this is a firm request you want tracked, consider opening a Feature request issue instead.
+
+  - type: textarea
+    id: idea
+    attributes:
+      label: What is your idea
+      description: Start with "I want to be able to..." or "It would help if..."
+      placeholder: "Example: It would help if I could long-press an app in the drawer to hear more information about it — like its size, last used date, and whether it has notifications."
+    validations:
+      required: true
+
+  - type: textarea
+    id: why
+    attributes:
+      label: Why would this help
+      description: Describe the problem it solves or the task it makes easier.
+      placeholder: "Example: Right now I have to open Settings and navigate to App info every time I want to know anything about an app. That is about 15 steps."
+    validations:
+      required: false
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Which part of aoler does this relate to
+      options:
+        - Home screen
+        - App drawer
+        - Gestures
+        - Screen reader announcements
+        - Focus and keyboard navigation
+        - Not sure
+    validations:
+      required: false

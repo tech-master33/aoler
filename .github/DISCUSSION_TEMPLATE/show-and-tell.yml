@@ -1,0 +1,50 @@
+title: "[Show] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Share how you use aoler or the BAOSP stack.
+        This could be your setup, a workflow you have built, or something you found that works well.
+        It does not have to be technical. If it helps you use your phone, it is worth sharing.
+
+  - type: textarea
+    id: what
+    attributes:
+      label: What are you sharing
+      description: Describe your setup, workflow, or discovery in plain language.
+      placeholder: "Example: I paired aoler with a Bluetooth keyboard and mapped the arrow keys to move between apps. Now I can navigate the whole launcher without touching the screen."
+    validations:
+      required: true
+
+  - type: textarea
+    id: how
+    attributes:
+      label: How did you set it up
+      description: Step-by-step if possible, so others can replicate it.
+      placeholder: |
+        1. Connected a Bluetooth keyboard to my phone
+        2. Opened aoler settings and enabled keyboard navigation mode
+        3. Arrow keys now move focus between app icons
+        4. Enter launches the focused app
+    validations:
+      required: false
+
+  - type: dropdown
+    id: screen-reader
+    attributes:
+      label: Which screen reader were you using
+      options:
+        - andrdscren (BAOSP)
+        - TalkBack (Google)
+        - Both
+        - No screen reader
+    validations:
+      required: false
+
+  - type: input
+    id: device
+    attributes:
+      label: Device and Android version
+      placeholder: "Example: Motorola Moto G, Android 11"
+    validations:
+      required: false

@@ -1,0 +1,29 @@
+title: ""
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This is the place for general conversation about aoler — the BAOSP accessible launcher.
+        No question is too small. No topic is off limits as long as it relates to aoler or accessible Android.
+
+  - type: textarea
+    id: message
+    attributes:
+      label: What would you like to discuss
+      description: Write as much or as little as you like. Plain language is always fine.
+      placeholder: "Example: I have been using aoler for two weeks and wanted to share some thoughts on how the app drawer feels compared to stock Android."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: topic
+    attributes:
+      label: What is this about
+      options:
+        - My experience using aoler
+        - A question about how something works
+        - Comparing aoler to other launchers
+        - The BAOSP project in general
+        - Something else
+    validations:
+      required: false
