@@ -6,6 +6,35 @@ Every step is numbered and linear — no visual layout is assumed.
 
 ---
 
+## Ways to contribute
+
+You do not need to write code to contribute. Here are all the ways you can help:
+
+1. Report a bug — describe something that does not work as expected
+2. Request a feature — describe something that would make the launcher easier to use
+3. Improve documentation — fix unclear steps or add missing information
+4. Test builds — install nightly APKs and report launcher behaviour with a screen reader
+5. Translate — help translate in-app strings to other languages
+6. Write code — fix bugs or add features to the launcher
+
+---
+
+## Claiming an issue
+
+If you want to work on an existing issue — especially one tagged `needs help` or `good first issue` — follow these steps first.
+
+1. Open the issue you want to work on
+2. Read the full description, including the "Where to start" section if there is one
+3. Leave a comment saying you would like to work on it — for example: "I'd like to take this on"
+4. Wait for a maintainer to reply — we will assign the issue to you and answer any questions
+5. Once assigned, follow the steps in this guide to fork, branch, make your change, and open a pull request
+
+This step matters because it avoids two people doing the same work at the same time.
+If you have been assigned an issue and decide you cannot continue, leave a comment to let us know.
+We will unassign it so someone else can pick it up.
+
+---
+
 ## Before you start
 
 You need:
@@ -24,7 +53,7 @@ aoler replaces the Android home screen with one built for screen reader users.
 The project has three main parts:
 
 - `app/src/main/java/org/baosp/aoler/` — all Kotlin source code
-  - `LauncherActivity.kt` — the home screen itself; what the user sees when they press Home
+  - `LauncherActivity.kt` — the home screen; what the user sees when they press Home
   - `AppDrawerActivity.kt` — the full app list, opened by swiping up
   - `AppAdapter.kt` — the RecyclerView adapter that drives the app list
   - `AppInfo.kt` — data model holding each app's label, package name, and intent
@@ -83,7 +112,7 @@ Open the project in Android Studio or your editor.
 The project uses Kotlin and ViewBinding. Key files to know:
 
 - `LauncherActivity.kt` — handles the home screen, swipe gestures, and initial app list
-- `AppDrawerActivity.kt` — full scrollable app list; open via swipe up from home
+- `AppDrawerActivity.kt` — full scrollable app list; opened by swiping up from home
 - `AppAdapter.kt` — sets content descriptions on each app item so the screen reader announces names
 - `AccessibilityHelper.kt` — call `announce()` here to speak text without changing focus
 
@@ -98,7 +127,8 @@ Every change must follow these rules:
 4. Do not use color alone to communicate information — also use text or shape
 5. When an action completes (app launched, list scrolled), announce it via `AccessibilityHelper`
 6. Do not add animations that cannot be disabled via the system Reduce Motion setting
-7. Test every change with a screen reader turned on before submitting
+7. All strings shown to the user must be in `strings.xml` so they can be translated
+8. Test every change with a screen reader turned on before submitting
 
 ---
 
@@ -183,22 +213,44 @@ Then:
 
 ---
 
-## Reporting a bug
+## Reporting a bug or requesting a feature
+
+You do not need to know how to code to do this. It is one of the most valuable contributions.
 
 1. Open github.com/tech-master33/aoler/issues
 2. Activate New issue
-3. Fill in the title with a short description of the problem
-4. In the body, include:
-   - What you were doing when the problem happened
-   - What you expected to happen
-   - What actually happened
+3. Choose Bug report or Feature request
+4. Fill in the title with one short sentence describing the problem or request
+5. In the body, include:
+   - What you were trying to do
+   - What happened instead of what you expected
+   - Whether it happens every time or only sometimes
    - Your Android version and device model
    - Which screen reader you were using (TalkBack, andrdscren, or other)
-   - Whether the problem happens every time or only sometimes
 
 ---
 
-## Getting help
+## Code review process
 
-Open a discussion at github.com/tech-master33/aoler/discussions
-and describe your question. You do not need to know the solution — just describe what you are trying to do.
+After you open a pull request:
+
+1. A maintainer will read your changes and may ask questions in the comments
+2. Reply to comments — activate the Resolve conversation button once you have addressed the point
+3. If changes are requested, push new commits to the same branch — the pull request updates automatically
+4. Once approved, a maintainer will merge your pull request
+
+Most pull requests receive a first response within a few days.
+If you have not heard back after a week, add a comment to the pull request to ask for an update.
+
+---
+
+## Community and questions
+
+- Discussions: github.com/tech-master33/aoler/discussions
+- Issues: github.com/tech-master33/aoler/issues
+- Screen reader: github.com/tech-master33/andrdscren
+- TTS engine: github.com/tech-master33/aotts
+- BAOSP main project: github.com/tech-master33/baosp
+
+Open a discussion if you have a question. Describe what you are trying to do and where you are stuck.
+You do not need to have a solution — questions about how things work are welcome.
