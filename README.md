@@ -7,9 +7,9 @@ A home screen launcher built from the ground up for blind and visually impaired 
 
 ## Download — Latest Nightly Build
 
-**→ [github.com/tech-master33/aoler/releases/tag/nightly](https://github.com/tech-master33/aoler/releases/tag/nightly)**
+**→ [github.com/tech-master33/baosp/releases/tag/nightly](https://github.com/tech-master33/baosp/releases/tag/nightly)**
 
-Updated automatically every night.
+Updated automatically every night alongside the screen reader, TTS engine, clock, calculator, and panel.
 
 | File | Description |
 |------|-------------|
@@ -24,24 +24,34 @@ aoler replaces the standard Android home screen with one built for screen reader
 - **Spoken app names on focus** — the screen reader announces each app as you touch it
 - **Quick launch gestures** — swipe up to open the app drawer, swipe down to go to the first app
 - **No visual clutter** — no widgets, no wallpaper overlays, no hidden folders
-- **Works with andrdscren** — designed to pair with the BAOSP screen reader out of the box
+- **Works with baosp-screenreader** — designed to pair with the BAOSP screen reader out of the box
 
 ## Installing on your Android device
 
-1. Download `aoler-*.apk` from the [nightly release](https://github.com/tech-master33/aoler/releases/tag/nightly)
+1. Download `aoler-*.apk` from the [nightly release](https://github.com/tech-master33/baosp/releases/tag/nightly)
 2. Transfer to your device and install (allow "unknown sources" if prompted)
 3. Press the Home button — Android will ask which launcher to use
 4. Select **aoler** and tap **Always**
 
 To switch back to your previous launcher: Settings → Apps → Default apps → Home app.
 
-## Related repos
+## BAOSP Ecosystem
 
-| Repo | Description |
+aoler is part of BAOSP — an accessible Android platform for blind and visually impaired users:
+
+| Repo | What it does |
 |------|-------------|
-| [baosp](https://github.com/tech-master33/baosp) | Main BAOSP project — AOSP build, patches, nightly APK bundle |
-| [andrdscren](https://github.com/tech-master33/andrdscren) | Screen reader source |
-| [aotts](https://github.com/tech-master33/aotts) | TTS engine source |
+| [baosp](https://github.com/tech-master33/baosp) | Main project — nightly bundle, coordination |
+| [baosp-screenreader](https://github.com/tech-master33/baosp-screenreader) | Screen reader — accessibility service |
+| [baosp-tts](https://github.com/tech-master33/baosp-tts) | SVOX Pico TTS engine |
+| **[aoler](https://github.com/tech-master33/aoler)** | **Accessible home screen launcher (this repo)** |
+| [baosp-clock](https://github.com/tech-master33/baosp-clock) | Accessible clock, alarm, timer |
+| [baosp-calc](https://github.com/tech-master33/baosp-calc) | Accessible calculator |
+| [baosp-panel](https://github.com/tech-master33/baosp-panel) | Quick-access control panel |
+| [baosp-braille](https://github.com/tech-master33/baosp-braille) | Bluetooth Braille display driver |
+
+All APKs are bundled together and published every night at  
+**[github.com/tech-master33/baosp/releases/tag/nightly](https://github.com/tech-master33/baosp/releases/tag/nightly)**
 
 ## Build System
 
